@@ -1,10 +1,10 @@
-// swift-tools-version:5.3
+// swift-tools-version:5.6
 import PackageDescription
 
 let package = Package(
     name: "catvice",
     platforms: [
-       .macOS(.v11)
+       .macOS(.v12)
     ],
     dependencies: [
         // 💧 A server-side Swift web framework.

@@ -9,20 +9,20 @@ func routes(_ app: Application) throws {
     app.get("hello") { req -> String in
         return "Hello, world!"
     }
-    app.get("jacopo") { req -> String in
-        return "Jacopo è un clown"
-    }
     
-
     app.get("image", ":cat") { req -> Response in
         let name = req.parameters.get("cat")
         return req.redirect(to: "/images/Cat/\(name ?? "0").jpg")
     }
     
-//    app.get("image", ":cat") { req -> EventLoopFuture<View> in
-//        let catN = req.parameters.get("cat")
-//        return req.view.render("image", ["cat": catN])
+    
+//    app.get("api", "advice") { req -> EventLoopFuture<Void> in
+//
+//        try await req.fileio.readFile(at: "/Advice/advice.json") { chunk in
+//            return chunk // ByteBuffer
+//        }
 //    }
+
 
 
     try app.register(collection: TodoController())
